@@ -84,9 +84,52 @@ sudo certbot certonly --manual --preferred-challenges dns --email <mailAdresiniz
 
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/084f8e75-92e2-4f48-8b92-4b503377e2df)
 
-> Ben namecheap'ten gösteriyorum size neye sahipseniz oradan yapabilirsiniz.
+> [Buradan](https://github.com/ruesandora/Ar.io/blob/main/record-ekleme.md) Recordlarınızı ekleyebilirisiniz. TEK TEK GİDİN OKUYUN PLS
 
-> 
+# Şimdi bu klasöre girelim ve içinde ki her şeyi CTRL + K ile silelim.
+sudo nano /etc/nginx/sites-available/default
+
+# İçine bu kodu yapıştıralım ama yapıştırmadan önce tam 6 yerde ki tırnakların içini doldurup tırnakları kaldırın.
+
+```console
+# Force redirects from HTTP to HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+    server_name <domainin> *.<domainin>;
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+# Forward traffic to your node and provide SSL certificates
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name <domainin> *.<domainin>;
+
+    ssl_certificate /etc/letsencrypt/live/<domainin>/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/<domainin>/privkey.pem;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_http_version 1.1;
+    }
+}
+```
+
+# Daha sonra nginx konfigrasyonu ayarlayalım ve resetleyelim:
+sudo nginx -t
+sudo service nginx restart
+
+> Domaininizi internette search edince şöyle bir çıktı alırsınız
+
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/90b8bc7f-554c-470d-8728-f212e6d1a27b)
+
 
 
 
