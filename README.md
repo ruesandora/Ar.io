@@ -99,7 +99,8 @@ ip addr show | grep -w inet | awk '{print $2}' | awk -F'/' '{print $1}'
 sudo certbot certonly --manual --preferred-challenges dns --email <mailAdresiniz@gmail.com> -d <domainadresiniz.xyz> -d '*.<domainadresiniz.xyz>'
 ```
 
-> Bize bu kommuttan sonra bir kaç kez `Agree` , `Ye`s diyecek bunları geçiyoruz `AMA`, bunları geçtikten sonra `"Please deploy a DNS TXT record"` kısmında duruyoruz.
+> Bize bu kommuttan sonra bir kaç kez `Agree` , `Yes` diyecek bunları geçiyoruz `AMA`, 
+>> Bunları geçtikten sonra `"Please deploy a DNS TXT record"` kısmında duruyoruz.
 
 > Açıklamada bize verdiği `_acme-challenge`'ı ve `private key`'e benzeyen `TXT keyimizi` Record ekleyeceğiz, peki ya nasıl yaparız?
 
@@ -107,10 +108,14 @@ sudo certbot certonly --manual --preferred-challenges dns --email <mailAdresiniz
 
 > [Buradan](https://github.com/ruesandora/Ar.io/blob/main/record-ekleme.md) Recordlarınızı ekleyebilirisiniz. TEK TEK GİDİN OKUYUN PLS
 
+> Yaptıktan sonra aşağıdan devam:
+
+```console
 # Şimdi bu klasöre girelim ve içinde ki her şeyi CTRL + K ile silelim.
 sudo nano /etc/nginx/sites-available/default
+```
 
-# İçine bu kodu yapıştıralım ama yapıştırmadan önce tam 6 yerde ki tırnakların içini doldurup tırnakları kaldırın.
+> İçine bu kodu yapıştıralım `AMA` yapıştırmadan önce tam `6 yerde` ki tırnakların içini `doldurup` tırnakları kaldırın.
 
 ```console
 # Force redirects from HTTP to HTTPS
@@ -142,37 +147,49 @@ server {
     }
 }
 ```
-
+``` console
 # Daha sonra nginx konfigrasyonu ayarlayalım ve resetleyelim:
 sudo nginx -t
 sudo service nginx restart
+```
 
 > Domaininizi internette search edince şöyle bir çıktı alırsınız
 
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/90b8bc7f-554c-470d-8728-f212e6d1a27b)
 
+<h1 align="center">İnternette gözüktüysek devam edelim</h1>
 
-### Şimdiki aşamada 1 cüzdana ve 2 tip tokene ihtiyacımız var, 1. mainnet 2. Test token
+> Şimdiki aşamada 1 cüzdana ve `2 tip tokene` ihtiyacımız var, 1. `mainnet` 2. `Test token`
 
 > Ben [ArConnect](https://www.arconnect.io/)'i seçtim ve içine `çok ufak miktarda` mainnet `AR` attım, tıpkı Forta'da yaptığımız gibi.
 
 > Aynı esnada Discord `testnet-kanalına` yukarıda search ettiğimiz `domainimizi` ve `cüzdan adresimizi` atıyoruz `TEST` tokeni için.
 
+```
 # tekrardan ar-io-node dizinindeyken .env'in içine girelim.
 # Burada ARNS_ROOT_HOST kısmını inactive yapalım, yani başına # işareti koyabiliriz.
 # Sonradan CTRL X Y ENTER ile çıkalım.
 
+# Görselde gösterdim:
+```
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/5496c7b9-4b92-4616-abad-638ca0adfa29)
 
+<h1 align="center">Kontrat kurulumu</h1>
+
+```console
 # testnet-contract kurulumu:
 git clone https://github.com/ar-io/testnet-contract
 
 # dizine girip key.json'umuzu oluşturalım.
 cd testnet-contract
 nano key.json
+```
 
-> bu key.json'unun içine konulacak işlem [burada](https://github.com/ruesandora/Ar.io/blob/main/key.json.md) mevcut.
+> bu `key.json`'unun içine konulacak işlem [burada](https://github.com/ruesandora/Ar.io/blob/main/key.json.md) mevcut.
 
+> `key.json`'u hallettiysek:
+
+```console
 # Buradaki paketleri yükleyelim
 yarn install
 npm install
@@ -180,15 +197,19 @@ npm install -g rimraf
 npm install arg
 npm install -g ts-node
 sudo apt install ts-node -y
+```
 
 > key.json'dan sonra tools'u ayarlamalıyız, [buradan](https://github.com/ruesandora/Ar.io/blob/main/tools.md) yapabilirsiniz.
 
+> tools'u ayarladıysak devam:
+
+<h1 align="center">2 tokenide temin ettiyseniz devam edin</h1>
 
 # tools'u ayarlayıp kaydedip çıktıysanız bu komutu çalıştıralım
 yarn ts-node tools/join-network.ts
 # Bu komut size TX id: null verirse tokeniniz eksiktir ya testnet ya mainnet. Uzun bir TX verirse başarılı!
 
-
+> soon
 
 
 
