@@ -19,6 +19,7 @@ nvm install 16.15.1 && nvm use 16.15.1
 # gerekli paketler ve portlar
 sudo apt update -y && sudo apt upgrade -y
 
+# y diyip enterleyin enable komutunda.
 sudo ufw enable
 sudo ufw allow 22
 sudo ufw allow 80
@@ -50,10 +51,45 @@ nvm install 16.15.1
 sudo apt install build-essential
 sudo apt install sqlite3 -y
 
+
 # Node'u kuralım;
 
 git clone https://github.com/ar-io/ar-io-node
 cd ar-io-node
+
+# içine girelim
+nano .env
+# Domain adresinizi yazın tırnakların arasına ve tırnakları kaldırın
+GRAPHQL_HOST=arweave.net
+GRAPHQL_PORT=443
+START_HEIGHT=1000000
+ARNS_ROOT_HOST=<domainadresiniz.xyz>
+
+# node'umuzu calıstıralım:
+screen -S ar
+sudo docker-compose up -d --build
+sudo docker-compose logs -f --tail=0
+
+# ip'imizi teyit edelim ve ping atalım
+curl ipinfo.io/ip
+ip addr show | grep -w inet | awk '{print $2}' | awk -F'/' '{print $1}'
+
+# CERTBOT'TA YAPACAĞIMIZ BU İŞLEM EN ÖNEMLİ KISIM
+# Tırnakların arasını doldurup tırnakları kaldırın
+sudo certbot certonly --manual --preferred-challenges dns --email <mailAdresiniz@gmail.com> -d <domainadresiniz.xyz> -d '*.<domainadresiniz.xyz>'
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
