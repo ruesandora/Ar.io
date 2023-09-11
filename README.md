@@ -78,8 +78,15 @@ ip addr show | grep -w inet | awk '{print $2}' | awk -F'/' '{print $1}'
 # Tırnakların arasını doldurup tırnakları kaldırın
 sudo certbot certonly --manual --preferred-challenges dns --email <mailAdresiniz@gmail.com> -d <domainadresiniz.xyz> -d '*.<domainadresiniz.xyz>'
 
+> Bize bu kommuttan sonra bir kaç kez Agree , Yes diyecek bunları geçiyoruz AMA, bunları geçtikten sonra "Please deploy a DNS TXT record" kısmında duruyoruz.
 
+> Açıklamada bize verdiği _acme-challenge'ı ve private key'e benzeyen TXT keyimizi Record ekleyeceğiz, peki ya nasıl yaparız?
 
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/084f8e75-92e2-4f48-8b92-4b503377e2df)
+
+> Ben namecheap'ten gösteriyorum size neye sahipseniz oradan yapabilirsiniz.
+
+> 
 
 
 
