@@ -1,4 +1,5 @@
-# tools'u ayarlama 
+<h1 align="center">tools'u ayarlama</h1>
+
 
 > Aşama 1: `testnet-contract/tools` içine giriyoruz
 
