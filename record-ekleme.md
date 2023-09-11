@@ -1,4 +1,4 @@
-# DOMAİNİMİZE RECORD EKLEME 
+<h1 align="center">Domain'e Record Ekleme</h1>
 
 > Aşama 1: Domaninimizin manage panalıne giriyoruz:
 >> `Domain list` ==> `Domain Manage` (domainin sağında olur) ==> `Advance DNS`
@@ -23,6 +23,8 @@
 > Şimdi [buradan](https://dnschecker.org/#TXT/_acme-challenge.ruesandora.xyz) `_acme-challenge.domaininiz.xyz` şeklinde kendi domaininizi aratın.
 
 > Eğer İnternette yayılmaya başladı ve `tik sayınızda yeşiller` arttıysa (Genelde `10-20 DK` beklemeneizi tavsiye ederim) sunucuda `ENTER` diyebilirsiniz.
+
+<h1 align="center">Notlar:</h1>
 
 > `NOT`: Görselde ki gibi `2 TXT kaydınızda tikli` olacak
 
