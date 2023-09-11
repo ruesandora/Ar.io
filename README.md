@@ -10,10 +10,6 @@
 
 > `Hosting satın almanıza gerek yok`, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
 
-> Ayrıca `AR`'ı hepiniz bilirisiniz kurulumun ilerleyen safhalarında bize `0.10$lık` hatta daha az `mainnet AR` lazım.
-
-> `Chatta insanlardan mainnet AR isteyen görürsem banlarım. `
-
 <h1 align="center">Donanım ve İhtiyaçlar</h1>
 
 > dolduracağım burayı
@@ -161,9 +157,7 @@ sudo service nginx restart
 
 > Şimdiki aşamada 1 cüzdana ve `2 tip tokene` ihtiyacımız var, 1. `mainnet` 2. `Test token`
 
-> Ben [ArConnect](https://www.arconnect.io/)'i seçtim ve içine `çok ufak miktarda` mainnet `AR` attım, tıpkı Forta'da yaptığımız gibi.
-
-> Aynı esnada Discord `testnet-kanalına` yukarıda search ettiğimiz `domainimizi` ve `cüzdan adresimizi` atıyoruz `TEST` tokeni için.
+> Ben [ArConnect](https://www.arconnect.io/)'i seçtim ve Discord `testnet-kanalına` yukarıda search ettiğimiz `domainimizi` ve `cüzdan adresimizi` atıyoruz `TEST` ve `MAİN` tokeni için.
 
 ```
 # tekrardan ar-io-node dizinindeyken .env'in içine girelim.
