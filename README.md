@@ -1,12 +1,16 @@
 # Ar.io
 
-> TESTNETE BAŞLAMADAN ÖNCE, [Buradan](https://ar.io/testnet/) sayfayı biraz aşağıya kaydırıp FAQ kısmını okuyun arkadaşlar.
+> `TESTNETE BAŞLAMADAN ÖNCE`, [Buradan](https://ar.io/testnet/) sayfayı biraz aşağıya kaydırıp FAQ kısmını okuyun arkadaşlar.
 
 > Testnete katılmak için domain gerekmiyor ama ödül almak için gerekiyor, domainimi [Namecheap](https://www.namecheap.com/)'den aldım.
 
-> ruesandora.xyz aldım 0.98$'a. sizde ucuza bir şey alın katılmak istiyorsanız, Namecheap'ı zaten bilmeyen yoktur.
+> `ruesandora.xyz` aldım `0.98$`'a. sizde ucuza bir şey alın katılmak istiyorsanız, Namecheap'ı zaten bilmeyen yoktur.
 
-> Hosting satın almanıza gerek yok, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
+> `Hosting satın almanıza gerek yok`, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
+
+> Ayrıca `AR`'ı hepiniz bilirisiniz kurulumun ilerleyen safhalarında bize `0.10$lık` hatta daha az `mainnet AR` lazım.
+
+> `Chatta insanlardan mainnet AR isteyen görürsem banlarım. `
 
 # Kurulum
 
@@ -131,8 +135,26 @@ sudo service nginx restart
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/90b8bc7f-554c-470d-8728-f212e6d1a27b)
 
 
+### Şimdiki aşamada 1 cüzdana ve 2 tip tokene ihtiyacımız var, 1. mainnet 2. Test token
 
+> Ben [ArConnect](https://www.arconnect.io/)'i seçtim ve içine `çok ufak miktarda` mainnet `AR` attım, tıpkı Forta'da yaptığımız gibi.
 
+> Aynı esnada Discord `testnet-kanalına` yukarıda search ettiğimiz `domainimizi` ve `cüzdan adresimizi` atıyoruz `TEST` tokeni için.
+
+# tekrardan ar-io-node dizinindeyken .env'in içine girelim.
+# Burada ARNS_ROOT_HOST kısmını inactive yapalım, yani başına # işareti koyabiliriz.
+# Sonradan CTRL X Y ENTER ile çıkalım.
+
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/5496c7b9-4b92-4616-abad-638ca0adfa29)
+
+# testnet-contract kurulumu:
+git clone https://github.com/ar-io/testnet-contract
+
+# dizine girip key.json'umuzu oluşturalım.
+cd testnet-contract
+nano key.json
+
+# bu key.json'unun içine konulaca
 
 
 
