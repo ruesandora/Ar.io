@@ -205,9 +205,11 @@ sudo apt install ts-node -y
 
 <h1 align="center">2 tokenide temin ettiyseniz devam edin</h1>
 
+```console
 # tools'u ayarlayıp kaydedip çıktıysanız bu komutu çalıştıralım
 yarn ts-node tools/join-network.ts
 # Bu komut size TX id: null verirse tokeniniz eksiktir ya testnet ya mainnet. Uzun bir TX verirse başarılı!
+```
 
 > soon
 
