@@ -156,8 +156,20 @@ nano key.json
 
 > bu key.json'unun içine konulacak işlem [burada](https://github.com/ruesandora/Ar.io/blob/main/key.json.md) mevcut.
 
+# Buradaki paketleri yükleyelim
+yarn install
+npm install
+npm install -g rimraf
+npm install arg
+npm install -g ts-node
+sudo apt install ts-node -y
+
+> key.json'dan sonra tools'u ayarlamalıyız, [buradan](https://github.com/ruesandora/Ar.io/blob/main/tools.md) yapabilirsiniz.
 
 
+# tools'u ayarlayıp kaydedip çıktıysanız bu komutu çalıştıralım
+yarn ts-node tools/join-network.ts
+# Bu komut size TX id: null verirse tokeniniz eksiktir ya testnet ya mainnet. Uzun bir TX verirse başarılı!
 
 
 
