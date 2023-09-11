@@ -6,6 +6,8 @@
 
 > ruesandora.xyz aldım 0.98$'a. sizde ucuza bir şey alın katılmak istiyorsanız, Namecheap'ı zaten bilmeyen yoktur.
 
+> Hosting satın almanıza gerek yok, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
+
 # Kurulum
 
 # Güncelleme ve gerekli paketler
