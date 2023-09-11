@@ -154,7 +154,9 @@ git clone https://github.com/ar-io/testnet-contract
 cd testnet-contract
 nano key.json
 
-# bu key.json'unun içine konulaca
+> bu key.json'unun içine konulacak işlem [burada](https://github.com/ruesandora/Ar.io/blob/main/key.json.md) mevcut.
+
+
 
 
 
