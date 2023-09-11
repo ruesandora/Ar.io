@@ -41,7 +41,7 @@ sudo apt install nginx -y
 sudo apt install git -y
 sudo docker run hello-world
 
-# cerbot'uda yükleyelim
+# cerbotuda yükleyelim
 sudo apt install certbot -y
 sudo apt install openssh-server -y
 ```
@@ -49,13 +49,13 @@ sudo apt install openssh-server -y
 <h1 align="center">Gerekli paketler manuel</h1>
 
 ```console
-# yarn'ı yükleyelim
+# yarnı yükleyelim
 curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update -y
 sudo apt-get install yarn -y
 
-# nvm'i yükleyelim
+# nvmi yükleyelim
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
 
@@ -81,12 +81,12 @@ GRAPHQL_PORT=443
 START_HEIGHT=1000000
 ARNS_ROOT_HOST=<domainadresiniz.xyz>
 
-# node'umuzu calıstıralım:
+# nodeumuzu calıstıralım:
 screen -S ar
 sudo docker-compose up -d --build
 sudo docker-compose logs -f --tail=0
 
-# ip'imizi teyit edelim ve ping atalım
+# ipimizi teyit edelim ve ping atalım
 curl ipinfo.io/ip
 ip addr show | grep -w inet | awk '{print $2}' | awk -F'/' '{print $1}'
 ```
@@ -94,7 +94,7 @@ ip addr show | grep -w inet | awk '{print $2}' | awk -F'/' '{print $1}'
 <h1 align="center">ÇOKOMELLİ BURASI!</h1>
 
 ```console
-# CERTBOT'TA YAPACAĞIMIZ BU İŞLEM EN ÖNEMLİ KISIM
+# CERTBOTTA YAPACAĞIMIZ BU İŞLEM EN ÖNEMLİ KISIM
 # Tırnakların arasını doldurup tırnakları kaldırın
 sudo certbot certonly --manual --preferred-challenges dns --email <mailAdresiniz@gmail.com> -d <domainadresiniz.xyz> -d '*.<domainadresiniz.xyz>'
 ```
