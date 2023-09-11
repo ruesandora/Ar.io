@@ -1,4 +1,4 @@
-# key.json için gerekli işlemler:
+<h1 align="center">key.json için gerekli işlemler</h1>
 
 > NOT: `cd /testnet-contract` içersinde yapmayı unutmayın `nano key.json`'u.
 
