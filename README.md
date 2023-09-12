@@ -161,12 +161,14 @@ sudo service nginx restart
 
 ```
 # tekrardan ar-io-node dizinindeyken .env'in içine girelim.
-# Burada ARNS_ROOT_HOST kısmını inactive yapalım, yani başına # işareti koyabiliriz.
+# Burada en alta AR_IO_WALLET= kısmı ekleyip karşısına cüzdanımızı girelim 
 # Sonradan CTRL X Y ENTER ile çıkalım.
 
 # Görselde gösterdim:
 ```
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/5496c7b9-4b92-4616-abad-638ca0adfa29)
+
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/9ff234d0-c29f-4f77-bb07-95d5a175f9eb)
+
 
 <h1 align="center">Kontrat kurulumu</h1>
 
