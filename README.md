@@ -170,6 +170,12 @@ sudo service nginx restart
 
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/9ff234d0-c29f-4f77-bb07-95d5a175f9eb)
 
+```console
+# Yukarıda ki görseli gerçekleştirdiysen bunları yap
+sudo docker-compose down
+sudo docker-compose up -d --build
+sudo docker-compose logs -f --tail=0
+```
 
 <h1 align="center">Kontrat kurulumu</h1>
 
