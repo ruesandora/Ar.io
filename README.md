@@ -14,6 +14,8 @@
 
 > `Hosting` satın almanıza `gerek yok`, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
 
+> TOPLULUK KANALLARI: [Sohbet Kanalımız](https://t.me/RuesChat) - [Duyurular ve Gelişmeler](https://t.me/RuesAnnouncement) - [Ar.io Discord](https://discord.gg/fwcXfhkU)
+
 <h1 align="center">Donanım ve İhtiyaçlar</h1>
 
 > Güzel bir internete ihtiyacınız var Contabo sorun çıkarır TR sunucusu asla, [Hetzner](https://hetzner.cloud/?ref=gIFAhUnYYjD3) kullandım, şaşmaz.
