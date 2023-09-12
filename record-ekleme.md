@@ -3,29 +3,30 @@
 > Aşama 1: Domaninimizin manage panalıne giriyoruz:
 >> `Domain list` ==> `Domain Manage` (domainin sağında olur) ==> `Advance DNS`
 
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/d34cd3a7-c3e3-41f2-b10e-10d34cddf784)
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/beaff9fc-da0b-4d73-b17e-ae2c8535d1e4)
 
 > Aşama 2: `A` Record ekleme:
 >> `ADD New Recod` ==> `Record tipi: A` ==> `Host: @` ==> `Value: Sunucunuzn IP'si`. 
 
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/287ac28b-338a-41c5-bff8-dc40eef7eeff)
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/2dcce3a4-dc48-4333-82c6-eb4dc6cafbb8)
+
 
 > Aşama 3: `TXT` Record ekleme:
 >> `ADD New Recod` ==> `Record tipi: TXT` ==> `Host: _acme-challenge` ==> `Value: Size certbot komutunda verilen TXT keyi`.
 
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/b93e5d5b-b96e-473f-aeaf-dad2b6f1f6c0)
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/89e014e0-5d73-42c0-9501-c691f95b553b)
 
 > Aşama 4: `2. TXT` Record ekleme: (`Not`, ilkini yaptıktan sonra sunucunuda ENTER'e tıklayın size 2.'sini verecek ve `sonra bekleyin`)
 >> `ADD New Recod` ==> `Record tipi: TXT` ==> `Host: _acme-challenge` ==> `Value: Size certbot komutunda verilen 2. TXT keyi`.
 
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/b93e5d5b-b96e-473f-aeaf-dad2b6f1f6c0)
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/fceeab84-cf51-4c4f-98f5-b38097fd138c)
 
 > Aşama 5: `*` Record ekleme
 >> `ADD New Recod` ==> `Record tipi: A` ==> `Host: *` ==> `Value: Sunucunuzn IP'si`. 
 
 > GÖRSEL OLMASI GEREKEN SON HALİDİR:
 
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/c2b29ff7-f746-41c9-83a2-33ce3fe9a9dd)
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/df74737f-1b7d-4415-9cbc-bbb2ed0ac933)
 
 
 > Şimdi [buradan](https://dnschecker.org/#TXT/_acme-challenge.ruesandora.xyz) `_acme-challenge.domaininiz.xyz` şeklinde kendi domaininizi aratın.
@@ -36,7 +37,7 @@
 
 > `NOT`: Görselde ki gibi `2 TXT kaydınızda tikli` olacak
 
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/50866698-bfd1-4427-a627-24b49151d3ee)
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/cdc2508a-7c52-4241-ac95-3dc3eaf6a875)
 
 > Yukarıda karalamamamın nedeni benim değerlerimi girmeyin diye, yoksa sizde çalışmaz.
 
