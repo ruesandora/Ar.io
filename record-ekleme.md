@@ -20,6 +20,14 @@
 
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/b93e5d5b-b96e-473f-aeaf-dad2b6f1f6c0)
 
+> Aşama 5: `*` Record ekleme
+>> `ADD New Recod` ==> `Record tipi: A` ==> `Host: *` ==> `Value: Sunucunuzn IP'si`. 
+
+> GÖRSEL OLMASI GEREKEN SON HALİDİR:
+
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/c2b29ff7-f746-41c9-83a2-33ce3fe9a9dd)
+
+
 > Şimdi [buradan](https://dnschecker.org/#TXT/_acme-challenge.ruesandora.xyz) `_acme-challenge.domaininiz.xyz` şeklinde kendi domaininizi aratın.
 
 > Eğer İnternette yayılmaya başladı ve `tik sayınızda yeşiller` arttıysa (Genelde `10-20 DK` beklemeneizi tavsiye ederim) sunucuda `ENTER` diyebilirsiniz.
