@@ -172,6 +172,7 @@ sudo service nginx restart
 
 ```console
 # Yukarıda ki görseli gerçekleştirdiysen bunları yap
+screen -r ar
 sudo docker-compose down
 sudo docker-compose up -d --build
 sudo docker-compose logs -f --tail=0
