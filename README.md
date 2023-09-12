@@ -189,8 +189,8 @@ yarn install
 npm install
 npm install -g rimraf
 npm install arg
-npm install -g ts-node
 sudo apt install ts-node -y
+npm install -g ts-node
 ```
 
 > key.json'dan sonra tools'u ayarlamalıyız, [buradan](https://github.com/ruesandora/Ar.io/blob/main/tools.md) yapabilirsiniz.
