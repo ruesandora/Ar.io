@@ -2,17 +2,26 @@
 
 ### TESTNETE BAŞLAMADAN ÖNCE OKUNMASI GEREKENLER
 
+> YAZMASI ve ANLATMASI günler sürdü/sürecek sizin okumanız maks 15 dakika `tüm notlarımı okuyunuz lütfen`.
+
+> Hocam şunla şu yan yana olur mu gibi sorular hep yarım kaldığı için bu tarz soruları sormayın cevaplamayacağım.
+
 > [Buradan](https://ar.io/testnet/) sayfayı biraz aşağıya kaydırıp FAQ kısmını okuyun arkadaşlar.
 
 > Testnete katılmak için domain gerekmiyor ama ödül almak için gerekiyor, domainimi [Namecheap](https://www.namecheap.com/)'den aldım.
 
 > `ruesandora.xyz` aldım `0.98$`'a. sizde ucuza bir şey alın katılmak istiyorsanız, Namecheap'ı zaten bilmeyen yoktur.
 
-> `Hosting satın almanıza gerek yok`, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
+> `Hosting` satın almanıza `gerek yok`, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
 
 <h1 align="center">Donanım ve İhtiyaçlar</h1>
 
-> dolduracağım burayı
+> Güzel bir internete ihtiyacınız var Contabo sorun çıkarır TR sunucusu asla, [Hetzner](https://hetzner.cloud/?ref=gIFAhUnYYjD3) kullandım, şaşmaz.
+
+```
+> Sadece AR.IO varsa sunucunuzun diski minimum 80 GB olsun.
+> 80 GB SSD'nin getirdiği CPU ve RAM yeterli. (Genel firamlar için, kıytırık firamları bilmiyorum)
+```
 
 <h1 align="center">Kurulum</h1>
 
@@ -42,7 +51,7 @@ sudo apt install certbot -y
 sudo apt install openssh-server -y
 ```
 
-<h1 align="center">Gerekli paketler manuel</h1>
+<h1 align="center">Gerekli paketler Güncelleme</h1>
 
 ```console
 # yarnı yükleyelim
