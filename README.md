@@ -233,6 +233,7 @@ yarn ts-node tools/join-network.ts
 
 > https://domainAdresiniz/ar-io/healthcheck kısmını `düzenleyin`, `Search` edin ve `Uptime` her `F5` yaptığınızda artıyorsa tebrikler, rica ederim.
 
+> Uptime artıyorsa linkinizi testnet kanalına atın ve OG rolünüzü isteyin. Sadece doğru kuranlar alabilir.
 
 
 
