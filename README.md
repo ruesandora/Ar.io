@@ -100,7 +100,8 @@ sudo certbot certonly --manual --preferred-challenges dns --email <mailAdresiniz
 
 > Açıklamada bize verdiği `_acme-challenge`'ı ve `private key`'e benzeyen `TXT keyimizi` Record ekleyeceğiz, peki ya nasıl yaparız?
 
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/084f8e75-92e2-4f48-8b92-4b503377e2df)
+![image](https://github.com/ruesandora/Ar.io/assets/101149671/7916af9f-dcb8-4e1d-b6b7-78e2816eed17)
+
 
 > [Buradan](https://github.com/ruesandora/Ar.io/blob/main/record-ekleme.md) Recordlarınızı ekleyebilirisiniz. TEK TEK GİDİN OKUYUN PLS
 
