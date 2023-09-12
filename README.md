@@ -163,6 +163,7 @@ sudo service nginx restart
 
 > Domaininizi internette search edince şöyle bir çıktı alırsınız
 
+
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/90b8bc7f-554c-470d-8728-f212e6d1a27b)
 
 <h1 align="center">İnternette gözüktüysek devam edelim</h1>
