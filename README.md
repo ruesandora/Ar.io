@@ -203,13 +203,17 @@ sudo apt install ts-node -y
 npm install -g ts-node
 ```
 
-> key.json'dan sonra tools'u ayarlamalıyız, [buradan](https://github.com/ruesandora/Ar.io/blob/main/tools.md) yapabilirsiniz.
+> YUKARIDAKİ PAKETLERİ YÜKLEDİYSEK `tools`'u halledelim:
 
-> tools'u ayarladıysak devam:
+> `key.json`'dan sonra `tools`'u ayarlamalıyız, [buradan](https://github.com/ruesandora/Ar.io/blob/main/tools.md) yapabilirsiniz.
+
+> `tools`'u ayarladıysak devam:
 
 <h1 align="center">2 tokenide temin ettiyseniz devam edin</h1>
 
 ```console
+# tokeni aldıktan 15-20 dakika beklemenizi tavsiye ederim, başarlı TX alsanız bile ikisinden birisi gelmemiş olabilir
+
 # toolsu ayarlayıp kaydedip çıktıysanız bu komutu çalıştıralım
 yarn ts-node tools/join-network.ts
 # Bu komut size TX id: null verirse tokeniniz eksiktir ya testnet ya mainnet. Uzun bir TX verirse başarılı!
