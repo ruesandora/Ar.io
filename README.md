@@ -228,7 +228,7 @@ yarn ts-node tools/join-network.ts
 # Bu komut size TX id: null verirse tokeniniz eksiktir ya testnet ya mainnet. Uzun bir TX verirse başarılı!
 ```
 
-<h1 align="center">Buraya kadar okuduysan</h1>
+> https://domainAdresiniz/ar-io/healthcheck kısmını `düzenleyin`, `Search` edin ve `Uptime` her `F5` yaptığınızda artıyorsa tebrikler, rica ederim.
 
 
 
