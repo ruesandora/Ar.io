@@ -1,7 +1,7 @@
 <h1 align="center">tools'u ayarlama</h1>
 
 
-> Aşama 1: `testnet-contract/tools` içine giriyoruz
+> Aşama 1: `cd testnet-contract/tools` içine giriyoruz
 
 > Aşama 2: `nano join-network.ts` dosyasının içine giriyoruz, görselde ki gibi olacak ve `4 yeri` değiştireceğiz:
 
