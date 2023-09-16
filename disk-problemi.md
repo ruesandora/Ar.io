@@ -8,7 +8,7 @@
 
 > Yeni sunucunuza repomda ki normal kurulumu birebir aynı işlemleri gerçekleştiriyorsunuz
 
-> Tek fark kurulum esnasında 1000000 yerine 1250000 yazıyorsunuz bu şekilde kuruyorsunuz
+> Tek fark kurulum esnasında `.env`'de `1000000` yerine `1250000` yazıyorsunuz bu şekilde kuruyorsunuz
 ```
 GRAPHQL_HOST=arweave.net
 GRAPHQL_PORT=443
