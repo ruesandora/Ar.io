@@ -3,7 +3,7 @@
 
 > Aşama 1: `cd testnet-contract/tools` içine giriyoruz
 
-> Aşama 2: `nano join-network.ts` dosyasının içine giriyoruz, görselde ki gibi olacak ve `4 yeri` değiştireceğiz:
+> Aşama 2: `nano join-network.ts` dosyasının içine giriyoruz, görselde ki gibi olacak ve `5 yeri` değiştireceğiz:
 
 ![image](https://github.com/ruesandora/Ar.io/assets/101149671/cd67e37c-5ca2-4f1d-aa8e-75e358e0661d)
 
@@ -14,6 +14,8 @@
 > Aşama 5: `fqdn`'e `domainimizi` girelim!
 
 > Aşama 6: note kısmına gateway'ımız hakkında bir not bırakalım. Sonuna `RuesCommunity` yazılabilir.
+
+> Aşama 6: `const observerWallet =` kısmına tırnak işaretlerinin içine observer cüzdanımızı yazalım.
 
 > Son hali: `qty` ve `fqdn` değişmez, diğer ikisi değişken..
 
