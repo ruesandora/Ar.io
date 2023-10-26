@@ -32,7 +32,7 @@
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y curl openssh-server docker-compose git certbot nginx sqlite3 build-essential && sudo systemctl enable ssh && curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt-get update -y && sudo apt-get install -y yarn && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash && source ~/.bashrc
 
 # nvm kurulumu
-nvm install 16.15.1 && nvm use 16.15.1
+nvm install 18.8.0 && nvm use 18.8.0
 
 # gerekli paketler ve portlar
 sudo apt update -y && sudo apt upgrade -y
@@ -63,11 +63,11 @@ sudo apt-get update -y
 sudo apt-get install yarn -y
 
 # nvmi yükleyelim
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+ccurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
 
 # nodejs ve toolarımızı yükleyelim.
-nvm install 16.15.1
+nvm install 18.8.0
 sudo apt install build-essential
 sudo apt install sqlite3 -y
 ```
@@ -81,12 +81,16 @@ cd ar-io-node
 
 # içine girelim
 nano .env
-
-# Domain adresinizi yazın tırnakların arasına ve tırnakları kaldırın
+> [ArConnect](https://www.arconnect.io/)
+# 2 tane cüzdan oluşturun bunu aynı wallet içinde kurabilirsiniz ar connect kullanıyorsanız generate butonun basıp ikinci cüzdanınızı kurabilirsiniz birine mainnet token atacağız diğerinide observer olarak kullanacağız. 
+# Domain adresinizi ve cüzdan adreslerinizi yazın tırnakların arasına ve tırnakları kaldırın
 GRAPHQL_HOST=arweave.net
 GRAPHQL_PORT=443
 START_HEIGHT=1000000
-ARNS_ROOT_HOST=<domainadresiniz.xyz>
+RUN_OBSERVER=true
+ARNS_ROOT_HOST=<domain-adresiniz.xyz>
+AR_IO_WALLET=<Mainnet token atığınız cüzdan adresiniz>
+OBSERVER_WALLET=<Observer olarak açtığınız ikinci cüzdan adresiniz>
 
 # nodeumuzu calıstıralım:
 screen -S ar
@@ -168,20 +172,6 @@ sudo service nginx restart
 
 <h1 align="center">İnternette gözüktüysek devam edelim</h1>
 
-> Şimdiki aşamada 1 cüzdana ve `2 tip tokene` ihtiyacımız var, 1. `mainnet` 2. `Test token`
-
-> Ben [ArConnect](https://www.arconnect.io/)'i seçtim ve Discord `testnet-kanalına` yukarıda search ettiğimiz `domainimizi` ve `cüzdan adresimizi` atıyoruz `TEST` ve `MAİN` tokeni için.
-
-```
-# tekrardan ar-io-node dizinindeyken .env'in içine girelim.
-# Burada en alta AR_IO_WALLET= kısmı ekleyip karşısına cüzdanımızı girelim 
-# Sonradan CTRL X Y ENTER ile çıkalım.
-
-# Görselde gösterdim:
-```
-
-![image](https://github.com/ruesandora/Ar.io/assets/101149671/9ff234d0-c29f-4f77-bb07-95d5a175f9eb)
-
 ```console
 # Yukarıda ki görseli gerçekleştirdiysen bunları yap
 screen -r ar
@@ -206,22 +196,17 @@ nano key.json
 > `key.json`'u hallettiysek:
 
 ```console
-# Buradaki paketleri yükleyelim
+# Buradaki paketi yükleyelim
 yarn install
-npm install
-npm install -g rimraf
-npm install arg
-sudo apt install ts-node -y
-npm install -g ts-node
 ```
 
-> YUKARIDAKİ PAKETLERİ YÜKLEDİYSEK `tools`'u halledelim:
+> YUKARIDAKİ PAKETİ YÜKLEDİYSEK `tools`'u halledelim:
 
 > `key.json`'dan sonra `tools`'u ayarlamalıyız, [buradan](https://github.com/ruesandora/Ar.io/blob/main/tools.md) yapabilirsiniz.
 
 > `tools`'u ayarladıysak devam:
 
-<h1 align="center">2 tokenide temin ettiyseniz devam edin</h1>
+<h2 align="center">2 tokenide temin ettiyseniz devam edin. Discorda Testnet odasına gelip /apply komutu ile başlatabilirsiniz 21 soruya cevap verdikten sonra eğer herşey yolundaysa test tokenleri manuel olarak gönderiliyor. </h2>
 
 ```console
 # tokeni aldıktan 15-20 dakika beklemenizi tavsiye ederim, başarlı TX alsanız bile ikisinden birisi gelmemiş olabilir
