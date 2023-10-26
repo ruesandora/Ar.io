@@ -15,7 +15,7 @@
 
 > Aşama 6: note kısmına gateway'ımız hakkında bir not bırakalım. Sonuna `RuesCommunity` yazılabilir.
 
-> Aşama 6: `const observerWallet =` kısmına tırnak işaretlerinin içine observer cüzdanımızı yazalım.
+> Aşama 7: `const observerWallet =` kısmına tırnak işaretlerinin içine observer cüzdanımızı yazalım.
 
 > Son hali: `qty` ve `fqdn` değişmez, diğer ikisi değişken..
 
