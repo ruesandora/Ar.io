@@ -63,7 +63,7 @@ sudo apt-get update -y
 sudo apt-get install yarn -y
 
 # nvmi yükleyelim
-ccurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
 
 # nodejs ve toolarımızı yükleyelim.
