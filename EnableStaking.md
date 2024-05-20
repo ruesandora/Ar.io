@@ -50,6 +50,6 @@ yarn delegate-stake
 >
 > CONFIRM DELEGATION DETAILS? {"target":"tncUYUIOfIib-izqoGbVVO12LiZTjzh6YQYNenD2kH0","qty":100} > (Y/n) BU KISIMDA YES DİYİP TX OLUSMASINI BEKLEYİN VE BİTTİ.
 
-## Karşılıklı Stake yapmak isterseniz cüzdan adresim Telegram @enzifiri 
- <br> ``tncUYUIOfIib-izqoGbVVO12LiZTjzh6YQYNenD2kH0``
+## Karşılıklı Stake yapmak isterseniz Rues Ref grubunda kanal oluşturdum.
 
+https://t.me/ruesshare/21466
