@@ -2,11 +2,13 @@
 
 ### TESTNETE BAŞLAMADAN ÖNCE OKUNMASI GEREKENLER
 
-> YAZMASI ve ANLATMASI günler sürdü/sürecek sizin okumanız maks 15 dakika `tüm notlarımı okuyunuz lütfen`.
+> YAZMASI ve ANLATMASI günler sürdü/sürecek sizin okumanız maks 15 dakika `tüm notlarımı okuyunuz lütfen`. 
 
 > Hocam şunla şu yan yana olur mu gibi sorular hep yarım kaldığı için bu tarz soruları sormayın cevaplamayacağım.
 
-> [Buradan](https://ar.io/testnet/) sayfayı biraz aşağıya kaydırıp FAQ kısmını okuyun arkadaşlar.
+> Şu anda aktif 247 Gateway bulunuyor. Eskiden katılmak için 50k tARIO olan alt limit 10k tARIO'ya düşürüldü. Gateway olmak istiyorsanız cüzdanınızda bu miktarın bulunması şart.
+
+> Devam etmek isteyenler öncelikle tARIO temin etmeli. Bunun için de cüzdanınızdaki AR tokenleri [buradan](https://aox.xyz/#/beta) AO'ya geçirip [Permaswap](https://www.permaswap.network/#/ao/WAR-TARIO?tab=swap) üzerinden alabilirsiniz. Bridge işlemi bazen uzun sürebiliyor.
 
 > Testnete katılmak için domain gerekmiyor ama ödül almak için gerekiyor, domainimi [Namecheap](https://www.namecheap.com/)'den aldım.
 
@@ -14,7 +16,7 @@
 
 > `Hosting` satın almanıza `gerek yok`, bazı firmalar dayatıyor buna gerek yok, ayrıca kullanmadığınız mevcut domain varsa o da olur.
 
-> TOPLULUK KANALLARI: [Sohbet Kanalımız](https://t.me/RuesChat) - [Duyurular ve Gelişmeler](https://t.me/RuesAnnouncement) - [Ar.io Discord](https://discord.gg/fwcXfhkU)
+> TOPLULUK KANALLARI: [Sohbet Kanalımız](https://t.me/RuesChat) - [Duyurular ve Gelişmeler](https://t.me/RuesAnnouncement) - [Ar.io Discord](https://discord.com/invite/HGG52EtTc2)
 
 <h1 align="center">Donanım ve İhtiyaçlar</h1>
 
@@ -22,7 +24,7 @@
 
 ```
 > Sadece AR.IO varsa sunucunuzun diski minimum 80 GB olsun.
-> 80 GB SSD'nin getirdiği CPU ve RAM yeterli. (Genel firamlar için, kıytırık firamları bilmiyorum)
+> 80 GB SSD'nin getirdiği CPU ve RAM yeterli. (Genel firamlar için, kıytırık firmaları bilmiyorum)
 ```
 
 <h1 align="center">Kurulum</h1>
@@ -32,7 +34,7 @@
 sudo apt update -y && sudo apt upgrade -y && sudo apt install -y curl openssh-server docker-compose git certbot nginx sqlite3 build-essential && sudo systemctl enable ssh && curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt-get update -y && sudo apt-get install -y yarn && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash && source ~/.bashrc
 
 # nvm kurulumu
-nvm install 18.8.0 && nvm use 18.8.0
+nvm install 20.11.1 && nvm use 20.11.1
 
 # gerekli paketler ve portlar
 sudo apt update -y && sudo apt upgrade -y
@@ -67,7 +69,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
 
 # nodejs ve toolarımızı yükleyelim.
-nvm install 18.8.0
+nvm install 20.11.1
 sudo apt install build-essential
 sudo apt install sqlite3 -y
 ```
@@ -81,16 +83,17 @@ cd ar-io-node
 
 # içine girelim
 nano .env
-> [ArConnect](https://www.arconnect.io/)
-# 2 tane cüzdan oluşturun bunu aynı wallet içinde kurabilirsiniz ar connect kullanıyorsanız generate butonun basıp ikinci cüzdanınızı kurabilirsiniz birine mainnet token atacağız diğerinide observer olarak kullanacağız. 
+# İsterseniz 2(Observer - Owner), isterseniz tek cüzdan kullanabilirsiniz ben tek cüzdan kullanıyorum.
+# Arconnect kullanıyorsanız generate butonun basıp ikinci cüzdanınızı kurabilirsiniz.
 # Domain adresinizi ve cüzdan adreslerinizi yazın tırnakların arasına ve tırnakları kaldırın
+
 GRAPHQL_HOST=arweave.net
 GRAPHQL_PORT=443
 START_HEIGHT=1000000
 RUN_OBSERVER=true
 ARNS_ROOT_HOST=<domain-adresiniz.xyz>
-AR_IO_WALLET=<Mainnet token atığınız cüzdan adresiniz>
-OBSERVER_WALLET=<Observer olarak açtığınız ikinci cüzdan adresiniz>
+AR_IO_WALLET=<Cüzdan adresiniz>
+OBSERVER_WALLET=<Tek cüzdan kullanıyorsanız üsttekiyle aynı adres>
 
 # nodeumuzu calıstıralım:
 screen -S ar
@@ -180,50 +183,75 @@ sudo docker-compose up -d --build
 sudo docker-compose logs -f --tail=0
 ```
 
-<h1 align="center">Kontrat kurulumu</h1>
+<h1 align="center">Cüzdan kurulumu</h1>
 
 ```console
-# testnet-contract kurulumu:
-git clone https://github.com/ar-io/testnet-contract
+# NOT: 2 CÜZDAN KULLANANLAR OBSERVER WALLET İÇİN DE AYNI İŞLEMİ YAPMALI
+cd /ar-io-node/wallets
 
-# dizine girip key.json'umuzu oluşturalım.
-cd testnet-contract
-nano key.json
+# dizine girip cüzdanadresi.json umuzu oluşturalım.
+
+nano cüzdanadresi.json
 ```
 
-> bu `key.json`'unun içine konulacak işlem [burada](https://github.com/ruesandora/Ar.io/blob/main/key.json.md) mevcut.
+> bu `cüzdanadresi.json`'unun içine konulacak işlem [burada](https://github.com/ruesandora/Ar.io/blob/main/cuzdanadresi.json.md) mevcut.
 
-> `key.json`'u hallettiysek:
+> `cüzdanadresi.json`'u hallettiysek:
 
 ```console
-# Buradaki paketi yükleyelim
-yarn install
+# Son kez kapatıp açıyoruz ve loglarımıza bakıyoruz. Arada girip loglarınızı kontrol edebilirsiniz.
+sudo docker-compose down -v
+sudo docker-compose up -d --build
+screen -r ar
+sudo docker-compose logs -f --tail=0
+ctrl A+D
+
+# Observer logları için bir screen açalım
+screen -S observer
+sudo docker-compose logs -f observer
+ctrl A+D
 ```
 
-> YUKARIDAKİ PAKETİ YÜKLEDİYSEK `tools`'u halledelim:
+> YUKARIYI HALLEDİNCE [siteye](https://network-portal.app) geçelim:
 
-> `key.json`'dan sonra `tools`'u ayarlamalıyız, [buradan](https://github.com/ruesandora/Ar.io/blob/main/tools.md) yapabilirsiniz.
+> Cüzdan bağlayıp soldan Gateways'e geçiyoruz. My Gateway kısmında bir eksik varsa (Observer-Owner wallet) .env dosyasındaki aynı bilgileri girin.
 
-> `tools`'u ayarladıysak devam:
+> Otomatik stake açmak istiyorsanız Reward Auto Stake'i enabled yapabilirsiniz. Manuel stake etmenize gerek kalmaz.
 
-<h2 align="center">2 tokenide temin ettiyseniz devam edin. Discorda Testnet odasına gelip /apply komutu ile başlatabilirsiniz 21 soruya cevap verdikten sonra eğer herşey yolundaysa test tokenleri manuel olarak gönderiliyor. </h2>
+> https://domainAdresiniz/ar-io/healthcheck kısmını `düzenleyin`, `Search` edin ve `Uptime` her `F5` yaptığınızda artması gerekiyor.
+
+> https://domainAdresiniz/ar-io/observer/info kısmında cüzdan adresiniz görünmeli. `INVALID` yazısı görüyorsanız `cüzdanadresiniz.json` dosyasında bir hata yapmışsınız demektir.
+
+> Son olarak `My Gateway` kısmında sağ üstte `Observe` seçeneğine basıp kontrol edebilirsiniz. Hepsi `PASSED` ise tebrikler, rica ederim.
+
+<h1 align="center">Güncelleme Kodları</h1>
 
 ```console
-# tokeni aldıktan 15-20 dakika beklemenizi tavsiye ederim, başarlı TX alsanız bile ikisinden birisi gelmemiş olabilir
-
-# toolsu ayarlayıp kaydedip çıktıysanız bu komutu çalıştıralım
-yarn ts-node tools/join-network.ts
-# Bu komut size TX id: null verirse tokeniniz eksiktir ya testnet ya mainnet. Uzun bir TX verirse başarılı!
+# Güncelleme geldiğinde kodları sırasıyla kullanın
+cd ar-io-node
+sudo docker-compose down -v
+git checkout main
+git pull  
+sudo docker-compose up -d --build
+screen -r ar
+sudo docker-compose logs -f --tail=0
+ctrl A+D
+screen -r observer
+sudo docker-compose logs -f observer
+ctrl A+D
 ```
+<h1 align="center">Disk Temizleme</h1>
 
-> https://domainAdresiniz/ar-io/healthcheck kısmını `düzenleyin`, `Search` edin ve `Uptime` her `F5` yaptığınızda artıyorsa tebrikler, rica ederim.
-
-> Uptime artıyorsa linkinizi testnet kanalına atın ve OG rolünüzü isteyin. Sadece doğru kuranlar alabilir.
-
-
-
-
-
-
-
-
+```console
+# df -h ile diskin doluluk durumuna bakın. Dolmaya yakınsa:
+cd ar-io-node
+sudo docker-compose down -v
+sudo docker system prune -a
+rm -rf /root/ar-io-node/data/headers/partial-blocks
+rm -rf /root/ar-io-node/data/headers/partial-txs
+rm -rf /root/ar-io-node/data/redis
+rm -rf /root/ar-io-node/data/contiguous
+rm -rf /root/ar-io-node/data/sqlite
+sudo docker-compose up -d --build
+# Tekrar screenleri açıp logları kontrol edebilirsiniz.
+```
